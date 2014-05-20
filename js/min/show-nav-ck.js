@@ -1,0 +1,1 @@
+function toggleNav(){$("#site-wrapper").hasClass("show-nav")?$("#site-wrapper").removeClass("show-nav"):$("#site-wrapper").addClass("show-nav")}$(function(){$(".toggle-nav").click(function(){toggleNav()})}),$(document).keyup(function(a){27==a.keyCode&&$("#site-wrapper").hasClass("show-nav")&&toggleNav()});
