@@ -2,21 +2,21 @@
 	<div class="page-title-menu-nav">
 		
 
-			<div class="mobile-grid-100 tablet-grid-15 hide-on-desktop">
+			<div class="mobile-grid-100 tablet-grid-30 hide-on-desktop">
 				<a href="#" class="btnPageNav">
-					<i class="fa fa-arrow-left"></i>
+					<i class="fa fa-arrow-left"></i> Back
 				</a>
 			</div>
 
 
 			<div class="grid-20 hide-on-mobile hide-on-tablet">
 				<a href="#" class="btnPageNav">
-					<i class="fa fa-arrow-left"></i>
+					<i class="fa fa-arrow-left"></i> Back
 				</a>
 			</div>
 
 
-			<div class="mobile-grid-100 tablet-grid-85 grid-80">
+			<div class="mobile-grid-100 tablet-grid-70 grid-80">
 				<span class="page-title">
 					<i class="fa fa-tasks"></i> 
 					PageTitle

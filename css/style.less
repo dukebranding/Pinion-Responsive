@@ -142,7 +142,7 @@ body#login-home .wrapper
 }
 .wrapper
 {
-	
+	position: relative;
 }
 div[class*="grid-"]
 {
@@ -190,15 +190,9 @@ h6
 {
 	text-align: right;
 }
-.brand-logo
-{
-	   
-	-webkit-border-radius: 32px; 
-	-moz-border-radius: 32px;
-	border-radius: 32px;
 
-	background-color: @white;
-}
+
+
 
 
 
@@ -361,23 +355,31 @@ h6
 	transition: all @ease @duration;
 	.text-left; text-decoration: none;
 	line-height: 2.25;
+	display: block;
 }
 .mobile-header-switch, .header-switch
 {
 	color: @white; text-decoration: none;
 	font-size: (@font-base * 2);
 }
-.brand, .header-brand
+.header-brand
 {
 	width: 64px; line-height: 64px;
 	float: left;
 	margin: 24px 10px 0 0; padding: 0; 
-	transition: all @ease @duration;
+	transition: transform @ease @duration;
+	
 }
-.brand
+.header-brand .brand-logo
 {
-	// use this on mobile sizes
+	background: @white;
+	-webkit-border-radius:	32px; 
+	-moz-border-radius:		32px;
+	-o-border-radius:		32px;
+	border-radius:			32px;
+	transition: transform linear @duration;
 }
+
 
 .header-username, .header-permission-state, .mobile-header-switch
 {
@@ -400,10 +402,12 @@ h6
 .big-header-band-smaller .header-brand,
 {
 	margin-top: 5px; height: 32px; width: 32px;
+	margin: -7px 30px 0 0;
 }
-.big-header-band-smaller .header-brand .brand-logo
+.big-header-band-smaller .brand-logo
 {
-	width: 32px; height: 32px;
+	transform: scale(.5);
+
 }
 .big-header-band-smaller .header-userstate
 {
@@ -833,11 +837,11 @@ h6
 .btnPageNav
 {
 	text-align: left; text-indent: 5px; 
-	font-size: (@font-base * 2);
+	font-size: (@font-base * 1.5);
 	text-decoration: none;
-	width: 48px; height: 48px; line-height: 46px;
+	height: 48px; line-height: 46px;
 	display: inline-block;
-	margin-right: .25em; padding: 0;
+	margin-right: .25em; padding: 0 .5em 0 0;
 	background: @grey-super-light; color: @pinion-red;
 	.border-around;
 	-webkit-border-radius: 24px; 
@@ -1042,14 +1046,15 @@ h6
 	}
 	.mobile-header-brand
 	{
-		
+		background-size: 32px 32px;
 		width: 100%; height: auto; 
-		line-height: 2.25; background: #FFFFFF;
-		.text-center;
+		line-height: 2.25; background: transparent;
+		.text-left;
 		text-decoration: none;
 		margin: 0px 0px 0px 0px; padding: 0px 0px 0px 0px;
 		margin-top: 8px;
 	}
+
 	.mobile-header-switch, .header-switch
 	{
 		
@@ -1069,18 +1074,15 @@ h6
 		line-height: 1;
 		font-size: (@font-base * 2);
 	}
-	.mobile-header-brand
-	{
-		background-color: transparent;
-		width: 32px; height: 32px;
-		margin-top: 10px;
-	}
+
 	.mobile-header-brand .brand-logo
 	{
 		width: 32px; height: 32px;
-		-webkit-border-radius: 16px; 
-		-moz-border-radius: 16px;
-		border-radius: 16px;
+		-webkit-border-radius:	16px; 
+		-moz-border-radius:		16px;
+		-o-border-radius:		16px;
+		border-radius:			16px;
+		background: @white;
 	}
 	.mobile-header-button
 	{
@@ -1109,6 +1111,19 @@ h6
 		margin: 44px 0 10px;
 
 	}
+	.subhead
+	{
+		color: @grey-base;
+		font-size: (@font-base*1.1);
+		margin-left: 0px;
+	}
+	.btnPageNav
+	{
+		position: relative;
+		top:-10px;
+		left: -4px;
+
+	}
 }
 
 
@@ -1123,10 +1138,7 @@ h6
 	}
 }
 
-
-
-
-@media only screen and ( min-width: 641px ) and (max-width : 768px)
+@media only screen and ( min-width: 480px ) and (max-width : 640px)
 {
 	.basePopover
 	{
@@ -1136,9 +1148,38 @@ h6
 
 
 
+@media only screen and ( min-width: 641px ) and (max-width : 768px)
+{
+	.basePopover
+	{
+		width: 550px;
+	}
+	.btnPageNav
+	{
+		position: relative;
+		top: 1px;
+	}
+	.page-title-menu-nav .page-title,
+	.page-title-menu-nav .subhead
+	{
+		position: relative;
+		top: 5px;
+	}
+}
+
+
+
 
 @media only screen and (min-width : 769px)
 {
+	.scroll-header
+	{
+		// this is to clone the data grid header and try to make it 'always on'
+		display: block;
+		position: fixed;
+		width: 80%; height: 48px;
+		top: 52px; left: 21%;
+	}
 	.tile-link
 	{
 		.transition-none;
@@ -1146,8 +1187,7 @@ h6
 	.top-section
 	{
 		margin: 0 0 40px;
-	}
-	
+	}	
 }
 
 

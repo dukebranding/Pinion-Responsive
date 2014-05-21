@@ -6,14 +6,14 @@
 	<div class="hide-on-tablet hide-on-desktop header-mobile">
 		<div class="mobile-header">
 			<div class="grid-container">
-				<div class="mobile-grid-15">
+				<div class="mobile-grid-15 text-left">
 					<a class="mobile-header-switch" href="#">
 						<i class="fa fa-bars"></i>
 					</a>
 				</div>
 				<div class="mobile-grid-40">
 					<a class="mobile-header-brand" href="index.html.php">
-						<img src="images/logo.png" alt="" class="brand-logo" border="0" />
+						<img src="images/logo.svg" alt="" class="brand-logo" border="0" /> 
 					</a>
 				</div>
 				<div class="mobile-grid-45 text-right">
@@ -38,7 +38,7 @@
 				<div class="tablet-grid-50  grid-50">
 					
 					<a class="header-brand" href="index.html.php">
-						<img src="images/logo.png" alt="" class="brand-logo" border="0" />
+						<img src="images/logo.png" alt="" class="brand-logo" border="0" /> 
 					</a>
 				
 				

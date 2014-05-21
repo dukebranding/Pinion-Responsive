@@ -27,8 +27,12 @@
 	</div>
 
 
-	<div class="wrapper stickem-container">
+	<div class="wrapper">
 		<?php include('partials/row-data.html.php'); ?>
+
+		<div class="scroll-header">
+			<!-- the data grid's row header should be placed into here -->
+		</div>
 	</div>
 
 

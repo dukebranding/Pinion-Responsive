@@ -4,22 +4,24 @@
 	<!-- desktop -->
 	<div class="hide-on-mobile hide-on-tablet " id="">
 		<!-- load the left menu in this one too -->
-		<div class="grid-container stickem">
+		<div class="grid-container">
 			<div class="grid-20">
 				<!-- left menu here -->
 				<?php include('partials/left-menu-sample.html.php'); ?>
 			</div>
-			<div class="grid-80 grid-parent ">
+			<div class="grid-80 grid-parent">
 				<!-- each page of row data will have a header, but not in the KO loop -->
 				<!-- row header first -->
-					<div class="row-data-header-desktop " id="sticker">
-						<div class="grid-100 grid-parent">
-							<div class="grid-5">&nbsp;</div>
-							<div class="grid-20">Header Text</div>
-							<div class="grid-20">Header Text</div>
-							<div class="grid-20">Header Text</div>
-							<div class="grid-20">Header Text</div>
-							<div class="grid-15">&nbsp;</div>
+					<div class=" data-row-object">
+						<div class="row-data-header-desktop" >
+							<div class="grid-100 grid-parent">
+								<div class="grid-5">&nbsp;</div>
+								<div class="grid-20">Header Text</div>
+								<div class="grid-20">Header Text</div>
+								<div class="grid-20">Header Text</div>
+								<div class="grid-20">Header Text</div>
+								<div class="grid-15">&nbsp;</div>
+							</div>
 						</div>
 					</div>
 				<!-- data row next -->

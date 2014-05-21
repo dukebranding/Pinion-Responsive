@@ -8,8 +8,10 @@
 				window.addEventListener('scroll', function(e)
 				{
 					var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-					shrinkOn = 300,
+					shrinkOn = 15,
 					header = document.querySelector("header");
+					
+					
 					var alphaPixel = $('.big-header-band').height();
 					//the iZness
 					
@@ -23,6 +25,8 @@
 					if (distanceY > shrinkOn) 
 					{
 						classie.add(header,"big-header-band-smaller");
+						
+						//alert(iimg);
 						//$('.settings-menu').css('top',50);
 						$('.settings-menu').animate(
 							{
@@ -38,9 +42,10 @@
 					else 
 					{
 						
-						if (classie.has(header,"big-header-band-smaller")) 
+						if (classie.has(header,"big-header-band-smaller" ) )
 						{
 							classie.remove(header,"big-header-band-smaller");
+							
 							//$('.setting-menu').css('top',114);
 							$('.settings-menu').animate(
 							{
@@ -61,11 +66,12 @@
 
 			}
 			window.onload = init();
+			
 		</script>
 		<script type="text/javascript">
-															
+														
 		</script>
-
+		
 
 	</body>
 </html>
