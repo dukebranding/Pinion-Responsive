@@ -1,6 +1,7 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
 		<script type="text/javascript" src="js/classie.js"></script>
+		<script type="text/javascript" src="js/sticky.js"></script>
 		<script type="text/javascript">
 			function init() 
 			{
@@ -68,7 +69,12 @@
 			window.onload = init();
 			
 		</script>
-
+		<script type="text/javascript">
+		$(document).ready(function()
+			{
+				$('#data-grid-header').stickyfloat({ duration: 250 });
+			});
+		</script>
 		
 
 	</body>
