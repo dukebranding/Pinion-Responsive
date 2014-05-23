@@ -10,6 +10,7 @@
 	@grey-dark: #333333;
 	@grey-darkest: #111111;
 	@black: #000000;
+	@black-transparent: rgba(0, 0, 0, .5);
 
 /*debug color*/
 	@debug: orange;
@@ -639,7 +640,7 @@ h6
 /*basePopover styles*/
 .basePopoverContainer
 {
-	display: none; 
+	display: none; background: @white;
 }
 .basePopoverContainer:before
 {
@@ -662,7 +663,7 @@ h6
 	-moz-box-sizing: border-box; 
 	box-sizing: border-box;
 	width: 550px;
-	background: white; 
+	background: @white; 
 	border: 1px solid @grey-light;
 
 	padding-bottom: 20px;
@@ -679,14 +680,58 @@ h6
 	 margin: 0 0 0 0; line-height: 58px; vertical-align: middle;
 	 height: 32px;
 }
+
+.popup-location
+{
+	position: relative;
+}
 .popup-location:hover
 {
 	cursor: pointer;
 }
+.slide-up-labels
+{
+	position: absolute;
+	top: 0; left: 0;
+	width:100%; height: 20px;
+}
 
+.triggerBasePopover .slide-up-label
+{
+	background: @black-transparent; color: @white;
 
+	padding: 0 .5em .1em; 
+	position: relative;
+	top: 1.2em; left: -.5em;
 
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	-moz-opacity: 0;
+	-webkit-opacity: 0;
+	opacity: 0;
 
+	transition: all @ease @duration;
+}
+.triggerBasePopover:hover .slide-up-label
+{
+
+	top: -.9em; left: -.5em;
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	-webkit-opacity: 0.5;
+	opacity: 0.5;
+}
+.triggerBasePopover:hover .slide-up-label:after
+{
+	content: " ";
+	width: 0; height: 0;
+	position: absolute; left: 10%; bottom: -16px;
+	border: solid 8px;
+	border-color: @black-transparent transparent transparent;
+}
 
 
 
@@ -876,6 +921,7 @@ h6
 {
 	border-bottom: 1px solid @grey-super-light;
 	transition: background-color @ease @duration;
+	position: relative;
 }
 .row-data:hover
 {
@@ -942,7 +988,9 @@ h6
 }
 .basePopover .popup-left-menu-item
 {
-	font-size: (@font-base  * .75);
+	font-size: @font-base;
+	.border-around;
+	background: @grey-super-light;
 }
 
 
@@ -1175,10 +1223,9 @@ h6
 	.scroll-header
 	{
 		// this is to clone the data grid header and try to make it 'always on'
-		display: block;
+		.row-data-header-desktop;
 		position: fixed;
-		width: 80%; height: 48px;
-		top: 52px; left: 21%;
+		top: 52px;
 	}
 	.tile-link
 	{

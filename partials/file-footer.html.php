@@ -68,9 +68,7 @@
 			window.onload = init();
 			
 		</script>
-		<script type="text/javascript">
-														
-		</script>
+
 		
 
 	</body>

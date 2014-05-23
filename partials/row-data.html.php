@@ -12,7 +12,7 @@
 			<div class="grid-80 grid-parent">
 				<!-- each page of row data will have a header, but not in the KO loop -->
 				<!-- row header first -->
-					<div class=" data-row-object">
+					<div id="data-grid-header" class=" data-row-object">
 						<div class="row-data-header-desktop" >
 							<div class="grid-100 grid-parent">
 								<div class="grid-5">&nbsp;</div>
@@ -26,7 +26,7 @@
 					</div>
 				<!-- data row next -->
 				<!-- begin KO loop -->
-					<?php include('partials/big-list-desktop.html.php'); ?>>
+					<?php include('partials/big-list-desktop.html.php'); ?>
 				<!-- end KO loop -->
 			</div>
 			<div class="clear"></div>

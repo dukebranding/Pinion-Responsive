@@ -4,12 +4,12 @@ $(document).ready(function()
 	function basePopoverAction(ourDiv)
 	{
 		// setting this to a var in order to work around the fact that loaded data becomes 'this' inside of GET's callback function, preventing the intended append
-			trigger = $(ourDiv);
-			$.get("partials/basePopover.html")
-			.done(function(data)
-			{
-				$(trigger).closest('.popup-location').append(data);
-				$('#basePopoverWrapper').fadeIn('fast');
+		trigger = $(ourDiv);
+		$.get("partials/basePopover.html")
+		.done(function(data)
+		{
+			$(trigger).closest('.popup-location').append(data);
+			$('#basePopoverWrapper').fadeIn(100);
 
 
 				// set the actions for loading the embedded popovers when it's time
@@ -17,18 +17,18 @@ $(document).ready(function()
 				{
 					embedTrigger = $(this);
 					$.get("partials/embeddedPopover.html")
-						.done(function(data)
+					.done(function(data)
+					{
+						$(embedTrigger).parent().append(data);
+						$('#embeddedPopoverWrapper').fadeIn('fast');
+						$('#btnCancelEmbedded, #clickCloseEmbed').click(function()
 						{
-							$(embedTrigger).parent().append(data);
-							$('#embeddedPopoverWrapper').fadeIn('fast');
-							$('#btnCancelEmbedded, #clickCloseEmbed').click(function()
-							{
-								$('#embeddedPopoverWrapper').fadeOut('fast').remove();
-							});
+							$('#embeddedPopoverWrapper').fadeOut('fast').remove();
 						});
+					});
 						return false; // prevent default click action from happening!
 						//e.preventDefault(); // same thing as above
-				});
+					});
 
 
 				// set the closing action
@@ -44,8 +44,9 @@ $(document).ready(function()
 	{
 		if($('#basePopoverWrapper').length > 0)
 		{
-			$('#basePopoverWrapper').fadeOut('fast').remove();
+			
 			basePopoverAction(this);
+			$('#basePopoverWrapper').fadeOut('fast').remove();
 		}
 		else
 		{
@@ -75,14 +76,14 @@ $(document).ready(function()
 		var theContents = $(removedRow).html();
 		$(removedRow).css({'background':'#cb7844','color':'#ffffff'});
 		$(removedRow).slideUp(500, '', function()
-			{
-				$(theContents).fadeOut(5000);
-				$(removedRow).remove();
-			});
+		{
+			$(theContents).fadeOut(5000);
+			$(removedRow).remove();
+		});
 		
 		//alert(theContents);
 		// adding this as a callback function doesn't break the CSS method. when added as an unchained item, last in the chain, it broke the CSS method
-			
+
 		return false;
 	});
 	
@@ -103,43 +104,43 @@ $(document).ready(function()
 			the menu is visible
 			check the id of the trigger
 			show that id's menu
-*/
+			*/
 
-	$('.trigger-header').click(function(e)
-	{
-		var seeme = $('.settings-menu').css('display');
-		
-		var idMe = $(this).attr('id');
-		var submenuToShow = idMe.replace('trigger-','');
+			$('.trigger-header').click(function(e)
+			{
+				var seeme = $('.settings-menu').css('display');
 
-		subMenuSwitcher = function()
-		{
-			$('.settings-submenu').removeClass('settings-submenu');
-			$("#" + submenuToShow).addClass('settings-submenu');
-			return false;
-		}
+				var idMe = $(this).attr('id');
+				var submenuToShow = idMe.replace('trigger-','');
 
-		switch (seeme)
-		{
+				subMenuSwitcher = function()
+				{
+					$('.settings-submenu').removeClass('settings-submenu');
+					$("#" + submenuToShow).addClass('settings-submenu');
+					return false;
+				}
 
-			case 'block':
-				subMenuSwitcher(submenuToShow);
-				break;
-				
+				switch (seeme)
+				{
 
-			case 'none':
-				
-				
-				$('.settings-menu').slideDown('fast');
-				subMenuSwitcher(submenuToShow);
-				break;
+					case 'block':
+					subMenuSwitcher(submenuToShow);
+					break;
 
-		}
+
+					case 'none':
+
+
+					$('.settings-menu').slideDown('fast');
+					subMenuSwitcher(submenuToShow);
+					break;
+
+				}
 		// prevent window scroll
-			return false;
+		return false;
 			//e.preventDefault();
-		
-	});
+
+		});
 
 
 
@@ -152,8 +153,8 @@ $(document).ready(function()
 
 	// closing or saving the sliding header settings menu
 	$('#settings-button-save, #settings-button-cancel').click(function(e)
-		{
-			$('.settings-menu').slideUp('fast');
+	{
+		$('.settings-menu').slideUp('fast');
 
 			// prevent window scroll
 			return false;
@@ -170,45 +171,20 @@ $(document).ready(function()
 
 
 	//Off-canvas menu
-   var $page = $('#pinion-app-page, .settings-menu, .sticky-footer, .header-mobile, .header-tablet, .header-desktop, .big-header-band, #ocm-outer-page-wrapper'),
-       $mainMenu = $('#main-menu'),
-       $switch = $('.mobile-header-switch, .header-switch');
+	var $page = $('#pinion-app-page, .settings-menu, .sticky-footer, .header-mobile, .header-tablet, .header-desktop, .big-header-band, #ocm-outer-page-wrapper'),
+	$mainMenu = $('#main-menu'),
+	$switch = $('.mobile-header-switch, .header-switch');
 
-   $switch.on('touchstart click', function(e) {
-      e.preventDefault();
-      $page.toggleClass("open");
-      $mainMenu.toggleClass("open");
-      $(this).toggleClass("open");
-   });
-      $('#pinion-app-page').on('touchstart click', function() {
-      $page.removeClass("open");
-      $mainMenu.removeClass('open');
-      $switch.removeClass("open");
-   });
-
-
-
-
-
-
-	var datarow = $('.data-row-object').html();
-	var datarowcount = datarow.length;
-	// alert(datarow);
-	var headerFixed = false;
-
-
-	$( window ).scroll(function()
-	{
-
-		if ($('header.big-header-band').hasClass('big-header-band-smaller') && headerFixed = false)
-		{
-			$(datarow).appendTo('.scroll-header');
-			headerFixed = true;
-		}
-		else
-		{
-			headerFixed = false;
-		}
+	$switch.on('touchstart click', function(e) {
+		e.preventDefault();
+		$page.toggleClass("open");
+		$mainMenu.toggleClass("open");
+		$(this).toggleClass("open");
+	});
+	$('#pinion-app-page').on('touchstart click', function() {
+		$page.removeClass("open");
+		$mainMenu.removeClass('open');
+		$switch.removeClass("open");
 	});
 
 
@@ -216,27 +192,11 @@ $(document).ready(function()
 
 
 
-var lastScrollTop = 0;
-
-$(window).scroll(function(event)
-{
-
-	var st = $(this).scrollTop();
-
-	if (st > lastScrollTop)
-	{
-		// downscroll code
-		alert(st);
-	} 
-	else 
-	{
-		// upscroll code
-		alert(st);
-	}
-	lastScrollTop = st;
-});
 
 
+
+	
+	
 
 
 

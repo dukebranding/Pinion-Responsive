@@ -1,0 +1,7 @@
+@import url('ie.css');
+
+#main-menu, .triggerBasePopover .slide-up-label
+{
+  display: none;
+  width: 0; height: 0;
+}

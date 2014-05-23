@@ -14,7 +14,7 @@
 			<script src="js/html5.js"></script>
 		<![endif]-->
 		<!--[if (lt IE 9) & (!IEMobile)]>
-			<link rel="stylesheet" href="css/ie.css" />
+			<link rel="stylesheet" href="css/ie-more.css" />
 		<![endif]-->
 			
 
