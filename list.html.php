@@ -38,26 +38,6 @@
 
 
 
-<!-- markup for the cloned scroll header -->
-<div>
-	<div class="wrapper">
-		<div class="row-data-wrapper">
-			<div class="hide-on-mobile hide-on-tablet">
-				<div class="grid-container">
-					<div class="grid-20">&nbsp;</div>
-					<div class="grid-80 grid-parent">
-						<div class="grid-100 grid-parent">
-							<div>
-								<div class="scroll-header">
-								<!-- the data grid's row header should be placed into here -->
-							</div>	
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
 <?php include('partials/sticky-footer.html.php'); ?>
 <?php include('partials/file-footer.html.php'); ?>

@@ -72,7 +72,10 @@
 		<script type="text/javascript">
 		$(document).ready(function()
 			{
-				$('#data-grid-header').stickyfloat({ duration: 250 });
+				$('#data-grid-header').stickyfloat(
+				{ 
+					duration: 250 
+				});
 			});
 		</script>
 		
