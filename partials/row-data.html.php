@@ -1,6 +1,5 @@
 <div class="row-data-wrapper">
 
-
 	<!-- desktop -->
 	<div class="hide-on-mobile hide-on-tablet " id="">
 		<!-- load the left menu in this one too -->
@@ -36,7 +35,6 @@
 	<div class="clear"></div>
 
  
-
 	<!-- tablet, mobile -->
 	<div class="hide-on-desktop " id="">
 		<!-- dont load left menu -->
@@ -54,11 +52,4 @@
 			<!-- end KO loop -->
 		</div>
 	</div>
-
-
-
-
-
-
-
 </div>
